@@ -61,7 +61,7 @@ public class MyArray implements ArrayMethods {
     @Override
     public int min() {
         int min = arr[0];
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 1; i < arr.length; i++) {
             if (arr[i] < min) {
                 min = arr[i];
             }
@@ -75,11 +75,12 @@ public class MyArray implements ArrayMethods {
     @Override
     public int max() {
 
-        int max = arr[0];
+        int max = arr[0];     //20
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > max) {
                 max = arr[i];
             }
+
 
         }
 
@@ -89,19 +90,52 @@ public class MyArray implements ArrayMethods {
 
     @Override // volitelna
     public int min2() {
-        //throw new NotS
 
-       /* System.out.println(" this app not supported min2");
-        System.out.println(" this app not supported min2");
-        system.ex
-        return 0;*/
 
+    if (size > 0) {
+
+        int min = min();
+
+        int value = arr[1];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < value && arr[i] > min ) {
+                value = arr[i];
+            }
+
+        }
+
+        return value;
+    }else{
+        error("Incorrect array size: " + size);
         return 0;
     }
 
+    }
+
+
+
+
+
+
     @Override
     public int max2() {
-        return 0;
+        if (size > 0) {
+            int max = max();
+
+            int value = arr[1];
+            for (int i = 1; i < arr.length; i++) {
+                if (arr[i] > value && arr[i] < max ) {
+                    value = arr[i];
+                }
+
+            }
+
+            return value;
+        }else{
+            error("Incorrect array size: " + size);
+            return 0;
+        }
+
     }
 
     @Override
@@ -111,7 +145,7 @@ public class MyArray implements ArrayMethods {
 
 
         for (int i = 0; i < arr.length; i++) {
-            int temp = rn.nextInt(80) + 1;
+            int temp = rn.nextInt(b-a+1) + a;
             arr[i] = temp;
         }
 
@@ -171,7 +205,15 @@ public class MyArray implements ArrayMethods {
     }
 
     @Override
-    public void addItem(int newvalue) {
+    public void addItem(int newValue) {
+
+         // zistim dany pocet pola
+        // vytvorim nove pole  o 1 väčšie a na pozici b.length pridam newValue
+        int numberArray = arr.length;
+
+        int[] arr2 = new int[numberArray+1];
+
+        arr2[numberArray] = newValue;
 
     }
 
@@ -182,7 +224,16 @@ public class MyArray implements ArrayMethods {
 
     @Override
     public int[] copy() {
-        return new int[0];
+        /*int[] array = {23, 43, 55, 12};
+        int newLength = array.length;
+
+        int[] copiedArray = Arrays.copyOf(array, newLength);*/
+
+        int [] copieArray = new int[arr.length];
+         copieArray = arr.clone();
+
+
+        return copieArray;
     }
 
     @Override
@@ -191,6 +242,12 @@ public class MyArray implements ArrayMethods {
         return arr[position];
     }
 
+
+    public void error(String message) {
+        System.out.println(message);
+        System.exit(1);
+
+    }
 
     // metody
 

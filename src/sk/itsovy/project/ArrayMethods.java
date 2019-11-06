@@ -27,7 +27,7 @@ public interface ArrayMethods  {
 
     public  void sort(boolean asc );//
 
-    public void addItem(int newvalue);// add new value into array
+    public void addItem(int newValue);// add new value into array
 
     public void addItem(int newvalue , int position);  // volitelna  prida cislo na new poziciu
 

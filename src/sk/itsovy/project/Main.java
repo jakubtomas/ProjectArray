@@ -3,7 +3,7 @@ package sk.itsovy.project;
 public class Main {
     public static void main(String[] args) {
 
-        MyArray myArray = new MyArray(new int[]{4, 5,8 ,9, 6,88});
+        MyArray myArray = new MyArray(new int[]{88, 988,8 ,7, 6,8});
 
         System.out.println("Project Main.java");
         System.out.println("Toto je max " + myArray.max());

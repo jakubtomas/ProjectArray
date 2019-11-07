@@ -96,13 +96,21 @@ public class MyArray implements ArrayMethods {
 
         int min = min();
 
-        int value = arr[1];
+        int value = arr[0];
+        if (value == min) {
+            value = arr[1];
+        }
         for (int i = 1; i < arr.length; i++) {
-            if (arr[i] < value && arr[i] > min ) {
+
+            if ( arr[i] < value && arr[i] > min ) {
                 value = arr[i];
             }
 
+            //
+
         }
+
+
 
         return value;
     }else{
@@ -122,8 +130,16 @@ public class MyArray implements ArrayMethods {
         if (size > 0) {
             int max = max();
 
-            int value = arr[1];
+
+
+            int value = arr[0];
+
+            if (value == max) {
+                value = arr[1];
+            }
             for (int i = 1; i < arr.length; i++) {
+
+
                 if (arr[i] > value && arr[i] < max ) {
                     value = arr[i];
                 }
@@ -219,7 +235,21 @@ public class MyArray implements ArrayMethods {
 
     @Override
     public void addItem(int newvalue, int position) {
+        
+        int [] helparray  = new int[arr.length+1];
 
+        //int x = helparray.length;
+         helparray = arr.clone();
+
+
+
+        for ( int x=helparray.length; x > position ; x--) {
+            helparray[x] = helparray[x-1];
+        }
+
+        helparray[position] = newvalue;
+        
+        
     }
 
     @Override

@@ -235,21 +235,31 @@ public class MyArray implements ArrayMethods {
 
     @Override
     public void addItem(int newvalue, int position) {
-        
-        int [] helparray  = new int[arr.length+1];
 
-        //int x = helparray.length;
-         helparray = arr.clone();
+        int dlzka  = arr.length;
+        int[] helparray = new int[dlzka+1];
 
-
-
-        for ( int x=helparray.length; x > position ; x--) {
-            helparray[x] = helparray[x-1];
+        // priradenie
+        for (int i = 0; i <dlzka ; i++) {
+            helparray[i] = arr[i];
         }
 
+        for ( int x=helparray.length; x > position ; x--) {
+
+            if (x == 1) {
+                helparray[1] = helparray[0];
+            } else {
+                helparray[x-1] = helparray[x-2];
+
+            }
+
+        }
         helparray[position] = newvalue;
-        
-        
+
+        for (int i = 0; i <helparray.length ; i++) {
+            System.out.print(" " + helparray[i] );
+        }
+
     }
 
     @Override

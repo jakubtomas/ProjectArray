@@ -12,6 +12,10 @@ public class Main {
         System.out.println("Toto je najmensie cislo  "+ myArray.min());
         System.out.println("Toto je druhe najmensie cislo  " +myArray.min2());
 
+        myArray.addItem(9 , 3);
+
+
+        System.out.println("-----------");
         System.out.println(myArray.contains(3));
         System.out.println(myArray.countOfValues(4));
         System.out.println(myArray.getItem(3));

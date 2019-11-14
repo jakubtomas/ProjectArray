@@ -7,7 +7,7 @@ public class Group {
     private Student[] arr;
 
 
-    public Group(String name, int capacity) {
+    public Group(String name, int capacity) {//
         this.name = name;
         this.capacity = capacity;
         this.size = 0;

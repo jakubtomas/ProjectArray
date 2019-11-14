@@ -39,7 +39,7 @@ public class Student {
 
     public int getAge() {
 
-        // potrebne vypocitat vek studenta
+        // potrebne vypocitat vek studentas
         return 0;
     }
 

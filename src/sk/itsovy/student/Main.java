@@ -12,15 +12,7 @@ public class Main {
 
         Student erik = new Student("erik,", "poter", 2019 , 12, 20);
         Group g1 = new Group("1n", 5);
-       // erik.showSubject();
-        /*erik.addSubject("MAT");
-        erik.showSubject();
-        erik.addSubject("fyzika");
-        erik.showSubject();
 
-        erik.addSubject("physic");
-        erik.showSubject();
-*/
 
 
 

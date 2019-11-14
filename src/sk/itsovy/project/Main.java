@@ -5,7 +5,7 @@ public class Main {
 
         MyArray myArray = new MyArray(new int[]{88, 988,8 ,7, 6,8});
 
-        System.out.println("Project Main.java");
+      /*  System.out.println("Project Main.java");
         System.out.println("Toto je max " + myArray.max());
         System.out.println("Toto je druhe max " + myArray.max2());
         System.out.println("--------------");
@@ -14,11 +14,14 @@ public class Main {
 
         myArray.addItem(9 , 3);
 
-
+        // ISTQB
         System.out.println("-----------");
         System.out.println(myArray.contains(3));
         System.out.println(myArray.countOfValues(4));
-        System.out.println(myArray.getItem(3));
+        System.out.println(myArray.getItem(3));*/
+
+
+
 
     }
 }

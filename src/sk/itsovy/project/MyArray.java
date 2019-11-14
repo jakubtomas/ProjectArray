@@ -157,6 +157,8 @@ public class MyArray implements ArrayMethods {
     @Override
     public void generateValue(int a, int b) {
 
+
+
         Random rn = new Random();
 
 
@@ -217,7 +219,17 @@ public class MyArray implements ArrayMethods {
 
     @Override
     public void sort(boolean asc) {
+        int i ,j,temp;
+        for ( i = 0; i <size-1 ; i++) {
 
+            /*for (int j = 0; j < size-1-i; j++) {
+                if (asc == true && arr[j] > arr[j] + 1) {
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1]  =temp;
+                }
+            }*/
+        }
     }
 
     @Override
@@ -256,6 +268,8 @@ public class MyArray implements ArrayMethods {
         }
         helparray[position] = newvalue;
 
+        this.arr = helparray;
+
         for (int i = 0; i <helparray.length ; i++) {
             System.out.print(" " + helparray[i] );
         }
@@ -269,8 +283,8 @@ public class MyArray implements ArrayMethods {
 
         int[] copiedArray = Arrays.copyOf(array, newLength);*/
 
-        int [] copieArray = new int[arr.length];
-         copieArray = arr.clone();
+
+        int [] copieArray = arr.clone();
 
 
         return copieArray;

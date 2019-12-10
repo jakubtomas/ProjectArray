@@ -10,6 +10,14 @@ public class Student {
     private LocalDate bDay;
     private String[] subject /*= new String[0]*/;
 
+
+
+
+
+
+
+
+
     ArrayList<String> pole = new ArrayList<String>();
 
 
@@ -89,6 +97,10 @@ public class Student {
         }
     }
 
+
+    public void test1() {
+
+    }
 
 }
 

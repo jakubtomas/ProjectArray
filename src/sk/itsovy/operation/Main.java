@@ -11,6 +11,10 @@ public class Main {
     public static void main(String[] args) {
 
         Student[] list = new Student[5];
+        // Student student1= new Student("karol", "Novak",(byte) 1, (byte) 2, (byte) 3 , 24 );
+
+        Student s1 = new Student("jakub", (byte) 28   , "Presov", "04001");
+        System.out.println(s1.getAttWeek());
 
 /*
         Student s1 = new Student("jakub", (byte) 23   , "Presov", "04001");

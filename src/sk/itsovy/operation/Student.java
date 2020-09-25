@@ -131,4 +131,8 @@ public class Student {
         return count;
     }
 
+
+    public byte getWeek() {
+        return this.attWeek;
+    }
 }

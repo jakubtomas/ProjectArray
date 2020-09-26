@@ -118,7 +118,7 @@ public class SudokuSolver {
     }
 
 
-    private void reduceAvailableValueInCol() {
+    private void reduceAvailableValueInCol() { // my own
         System.out.println(".------------------------ reduce Available In col");
         System.out.println(".------------------------ reduce Available In col");
         System.out.println(".------------------------ reduce Available In col");

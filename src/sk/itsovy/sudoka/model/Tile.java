@@ -39,6 +39,13 @@ public class Tile {
     public void remove(int value ) {
         available.remove(value);
 
+        if (available.size() == 1 && this.value == 0 ) {
+            System.out.println("priradenie " + available.toString().charAt(1));
+            char number = available.toString().charAt(1);
+            this.value = Integer.parseInt(Character.toString( number));
+        }
+
+
     }
     public void add(int value ) {
         available.add(value);

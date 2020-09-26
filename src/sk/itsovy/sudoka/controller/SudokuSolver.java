@@ -40,7 +40,7 @@ public class SudokuSolver {
     public void showArray() {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                System.out.print(arr[i][j] + " ");
+                System.out.print(board.getTiles()[i][j].getValue() + " ");
                 if (i == 2 || i == 5) System.out.print("");   // riadok
                 if (j == 2 || j == 5) System.out.print("| ");  // stlpec
             }
@@ -53,11 +53,16 @@ public class SudokuSolver {
         //System.out.println();
         // zistit poziciu
         // from class Tile , reduce values according the values in array
-        reduceAvailableValueInRow();
-        reduceAvailableValueInCol();
-        reduceAvailableValuesInSqr();
-        reduceAvailableValueInRow();
-        System.out.println(board.getTiles()[1][0].getAvailable() + " end");
+        int count = 0;
+        while (count<15) { // todo create function which will be control count number horizontal, vertical , squat and all number in Board
+            count++;
+            reduceAvailableValueInRow();
+            reduceAvailableValueInCol();
+            reduceAvailableValuesInSqr();
+        }
+
+        //Set<Integer> available
+        showPossibleValuesForTile();
     }
 
     private void reduceAvailableValueInRow() { // riadky hore dole
@@ -88,10 +93,11 @@ public class SudokuSolver {
 
                         if (board.getTiles()[i][k].getValue() >0) { // delete values only bigger than zero
                             System.out.println(" " +board.getTiles()[i][k].getValue() + " delete for " + board.getTiles()[i][j].getValue()+ " " +" [" +i+"] [" +j+ "]");
+                            System.out.println("===" + k);
                             board.getTiles()[i][j].getAvailable().remove(board.getTiles()[i][k].getValue());
-                            if (k == 8) {
-                                System.out.println(board.getTiles()[i][j].getAvailable() + " After delete");
-                            }
+                        }
+                        if (k == 8) {
+                            System.out.println(board.getTiles()[i][j].getAvailable() + " After delete");
                         }
                         // podmienka ked Tile ma iba jednu available tak pridat  setValue
 
@@ -130,9 +136,9 @@ public class SudokuSolver {
                             System.out.println(" " +board.getTiles()[k][j].getValue() + " delete for " + board.getTiles()[i][j].getValue()+ " " +" [" +i+"] [" +j+ "]");
 
                             board.getTiles()[i][j].getAvailable().remove(board.getTiles()[k][j].getValue());
-                            if (k == 8) {
-                                System.out.println(board.getTiles()[i][j].getAvailable() + " After delete");
-                            }
+                        }
+                        if (k == 8) {
+                            System.out.println(board.getTiles()[i][j].getAvailable() + " After delete");
                         }
                         // podmienka ked Tile ma iba jednu available tak pridat  setValue
 
@@ -150,7 +156,7 @@ public class SudokuSolver {
 
 
 
-    private void reduceAvailableValuesInSqr() { // copy from Miroslav Jackanin okay
+    private void reduceAvailableValuesInSqr() { // copy from Miroslav Jackanin okay but maybe I will create my own algorithm
         int k=0, l=0, m=0, n=0;
         for (int i=0; i<board.getTiles().length; i+=3){
             for (int j=0; j<board.getTiles().length; j+=3){
@@ -175,14 +181,20 @@ public class SudokuSolver {
         }
     }
 
+
     private void showPossibleValuesForTile() {
+        System.out.println("============================");
+        System.out.println("============================");
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                System.out.print(arr[i][j] + " ");
+                if (board.getTiles()[i][j].getAvailable() !=null) {
+                    System.out.println(board.getTiles()[i][j].getAvailable() + "  " + i+ "|" + j );
 
+                }
             }
             System.out.println("");
         }
+        System.out.println("============================");
     }
 
 
